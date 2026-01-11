@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props" Condition="Exists('..\packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{534C1C72-7F15-4E4C-A748-56FAEFDEAEB4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FancyDressShop</RootNamespace>
+    <AssemblyName>FancyDressShop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.30.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.30.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.9.3.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.8.5.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.5\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRentalManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminRentalManager.Designer.cs">
+      <DependentUpon>AdminRentalManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CartDisplay.Designer.cs">
+      <DependentUpon>CartDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartItem.cs" />
+    <Compile Include="CartItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CartItemCard.Designer.cs">
+      <DependentUpon>CartItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartManager.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerCart.Designer.cs">
+      <DependentUpon>CustomerCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCatalog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerCatalog.Designer.cs">
+      <DependentUpon>CustomerCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerProfile.Designer.cs">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRental.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>CustomerRental.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerRepository.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="DressDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DressDetail.Designer.cs">
+      <DependentUpon>DressDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DressInventory.cs" />
+    <Compile Include="DressInventoryRepository.cs" />
+    <Compile Include="DressItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DressItemControl.Designer.cs">
+      <DependentUpon>DressItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FancyDress.cs" />
+    <Compile Include="FancyDressRepository.cs" />
+    <Compile Include="ForgotPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPasswordForm.Designer.cs">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCustomers.Designer.cs">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDresses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageDresses.Designer.cs">
+      <DependentUpon>ManageDresses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiniCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiniCard.Designer.cs">
+      <DependentUpon>MiniCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentConfirmation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PaymentConfirmation.Designer.cs">
+      <DependentUpon>PaymentConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptGenerator.cs" />
+    <Compile Include="ReceiptPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptPreviewForm.Designer.cs">
+      <DependentUpon>ReceiptPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rental.cs" />
+    <Compile Include="RentalCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RentalCard.Designer.cs">
+      <DependentUpon>RentalCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RentalDetail.cs" />
+    <Compile Include="RentalRepository.cs" />
+    <Compile Include="RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SlipViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SlipViewerForm.Designer.cs">
+      <DependentUpon>SlipViewerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRentalManager.resx">
+      <DependentUpon>AdminRentalManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartDisplay.resx">
+      <DependentUpon>CartDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartItemCard.resx">
+      <DependentUpon>CartItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCart.resx">
+      <DependentUpon>CustomerCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCatalog.resx">
+      <DependentUpon>CustomerCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerProfile.resx">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerRental.resx">
+      <DependentUpon>CustomerRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DressDetail.resx">
+      <DependentUpon>DressDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DressItemControl.resx">
+      <DependentUpon>DressItemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPasswordForm.resx">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCustomers.resx">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDresses.resx">
+      <DependentUpon>ManageDresses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiniCard.resx">
+      <DependentUpon>MiniCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentConfirmation.resx">
+      <DependentUpon>PaymentConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptPreviewForm.resx">
+      <DependentUpon>ReceiptPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RentalCard.resx">
+      <DependentUpon>RentalCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SlipViewerForm.resx">
+      <DependentUpon>SlipViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Fonts\THSarabunNew Bold.ttf" />
+    <None Include="Fonts\THSarabunNew BoldItalic.ttf" />
+    <None Include="Fonts\THSarabunNew Italic.ttf" />
+    <None Include="Fonts\THSarabunNew.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qrfancydress.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %285%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %285%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %286%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %286%2911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %284.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %287%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %287%295.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %287%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %287%294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %287%293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %288%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ร้านเช่าชุดแฟนซี %289%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props'))" />
+  </Target>
+</Project>
